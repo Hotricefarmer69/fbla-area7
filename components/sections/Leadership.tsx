@@ -41,7 +41,7 @@ export function Leadership() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5"
         >
           {OFFICERS.map((officer, i) => (
             <motion.div
@@ -75,7 +75,7 @@ export function Leadership() {
                   )}
                 </div>
                 <div className="text-gold text-xs font-semibold mt-1 uppercase tracking-wide leading-tight">
-                  {officer.title.replace("Area 7 ", "")}
+                  {officer.title}
                 </div>
               </div>
             </motion.div>

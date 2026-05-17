@@ -113,33 +113,28 @@ export const EVENTS: Event[] = [
 
 export const OFFICERS: Officer[] = [
   {
-    name: "Subhakar Kilambi",
-    title: "Area 7 President",
+    name: "Subha Karki",
+    title: "President",
     photo: null,
   },
   {
-    name: "TBD",
-    title: "Area 7 Vice President",
+    name: "Aashika Jupudi",
+    title: "Vice President",
     photo: null,
   },
   {
-    name: "TBD",
-    title: "Area 7 Secretary",
+    name: "Leela Boutchantharaj",
+    title: "Secretary",
     photo: null,
   },
   {
-    name: "TBD",
-    title: "Area 7 Treasurer",
+    name: "Samarth Jain",
+    title: "Treasurer",
     photo: null,
   },
   {
-    name: "TBD",
-    title: "Area 7 Reporter",
-    photo: null,
-  },
-  {
-    name: "TBD",
-    title: "Area 7 Parliamentarian",
+    name: "Anna Pickett",
+    title: "Historian",
     photo: null,
   },
 ]

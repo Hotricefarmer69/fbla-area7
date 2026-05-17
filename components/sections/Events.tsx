@@ -12,15 +12,15 @@ export function Events() {
       className="py-24 sm:py-32 relative overflow-hidden"
       style={{ background: "#001840" }}
     >
-      {/* Subtle radial gradient accent */}
+      {/* Top gold glow */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-20 pointer-events-none"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] opacity-15 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(212,169,0,0.25) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(212,169,0,0.4) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-5xl">
 
         {/* Heading */}
         <motion.div
@@ -28,7 +28,7 @@ export function Events() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="gold-bar mx-auto mb-4" />
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-3">
@@ -39,52 +39,56 @@ export function Events() {
           </p>
         </motion.div>
 
-        {/* Events */}
+        {/* Event cards — white on dark for max readability */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="flex flex-col gap-5 max-w-4xl mx-auto"
+          className="flex flex-col gap-4"
         >
-          {EVENTS.map((event, i) => (
+          {EVENTS.map((event) => (
             <motion.div
               key={event.id}
               variants={cardEntrance}
-              className="glass-dark rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center
-                         hover:bg-white/[0.07] transition-colors duration-300 group"
+              className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center
+                         shadow-[0_4px_32px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(0,0,0,0.35)]
+                         transition-all duration-300 group"
             >
               {/* Date badge */}
-              <div className="flex-shrink-0 text-center min-w-[72px]">
-                <div
-                  className="text-gold text-2xl sm:text-3xl font-bold leading-none"
-                  style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-                >
-                  {event.dateShort.split(" ")[0]}
+              <div className="flex-shrink-0 flex sm:flex-col items-center sm:text-center gap-3 sm:gap-1 min-w-[80px]">
+                <div className="bg-gold rounded-xl px-3 py-2 text-center">
+                  <div
+                    className="text-navy-deep text-xl sm:text-2xl font-bold leading-none"
+                    style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+                  >
+                    {event.dateShort.split(" ")[0]}
+                  </div>
+                  <div className="text-navy-deep/70 text-[11px] font-bold tracking-wider uppercase mt-0.5">
+                    {event.dateShort.includes("–")
+                      ? event.date.split(" ")[0]
+                      : event.dateShort.split(" ")[1] ?? event.date.split(" ")[0]}
+                  </div>
                 </div>
-                <div className="text-white/50 text-xs font-semibold tracking-wider mt-1 uppercase">
-                  {event.dateShort.split(" ").slice(1).join(" ") || event.date.split(" ")[0]}
-                </div>
-                <div className="h-px w-8 bg-gold/30 mx-auto mt-2" />
               </div>
 
               {/* Divider */}
-              <div className="hidden sm:block w-px h-16 bg-white/10 flex-shrink-0" />
+              <div className="hidden sm:block w-px h-14 bg-slate-200 flex-shrink-0" />
 
               {/* Content */}
               <div className="flex-1 min-w-0">
-                <h3 className="text-white font-bold text-xl mb-2">{event.title}</h3>
-                <div className="flex flex-wrap gap-x-5 gap-y-1 mb-3">
-                  <span className="flex items-center gap-1.5 text-white/50 text-sm">
-                    <Calendar size={13} className="text-gold/70" />
+                <h3 className="text-navy-deep font-bold text-xl mb-2">{event.title}</h3>
+                <div className="flex flex-wrap gap-x-5 gap-y-1 mb-2.5">
+                  <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+                    <Calendar size={13} className="text-gold" />
                     {event.date}
                   </span>
-                  <span className="flex items-center gap-1.5 text-white/50 text-sm">
-                    <MapPin size={13} className="text-gold/70" />
+                  <span className="flex items-center gap-1.5 text-slate-500 text-sm">
+                    <MapPin size={13} className="text-gold" />
                     {event.location}
                   </span>
                 </div>
-                <p className="text-white/60 text-sm leading-relaxed" style={{ fontFamily: "var(--font-lato), sans-serif" }}>
+                <p className="text-slate-600 text-sm leading-relaxed" style={{ fontFamily: "var(--font-lato), sans-serif" }}>
                   {event.description}
                 </p>
               </div>
@@ -95,21 +99,21 @@ export function Events() {
                   href={event.learnMoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 inline-flex items-center gap-2 text-gold text-sm font-semibold
-                             hover:text-gold-light transition-colors group-hover:gap-3 duration-200"
+                  className="flex-shrink-0 inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold
+                             px-4 py-2.5 rounded-lg hover:bg-navy-mid transition-colors duration-200 whitespace-nowrap"
                 >
-                  Learn More <ArrowRight size={14} />
+                  Learn More <ArrowRight size={13} />
                 </a>
               ) : (
-                <span className="flex-shrink-0 inline-flex items-center gap-2 text-white/30 text-sm font-semibold">
-                  Coming Soon
+                <span className="flex-shrink-0 text-slate-400 text-sm font-medium whitespace-nowrap">
+                  Details TBD
                 </span>
               )}
             </motion.div>
           ))}
         </motion.div>
 
-        {/* External events link */}
+        {/* External link */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -121,7 +125,7 @@ export function Events() {
             href="https://www.fbla.org/high-school/competitive-events/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm font-medium transition-colors"
           >
             View all FBLA competitive events <ArrowRight size={13} />
           </a>
