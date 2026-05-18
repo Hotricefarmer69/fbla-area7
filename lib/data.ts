@@ -83,18 +83,18 @@ export const SCHOOLS: School[] = [
 export const EVENTS: Event[] = [
   {
     id: "fall-workshop",
-    title: "Fall Leadership Workshop",
-    date: "November 1, 2025",
-    dateShort: "Nov 1",
+    title: "Fall Leadership Conference",
+    date: "November 14, 2027",
+    dateShort: "Nov 14",
     location: "Central High School · Fort Worth, TX",
     description:
       "Annual leadership development and team-building workshop open to all Area 7 member chapters.",
   },
   {
     id: "area-conference",
-    title: "Area 7 Conference",
-    date: "December 6, 2025",
-    dateShort: "Dec 6",
+    title: "Area Leadership Conference",
+    date: "January 30, 2027",
+    dateShort: "Jan 30",
     location: "Timber Creek High School · Fort Worth, TX",
     description:
       "Our flagship competitive event — students compete in business events and leadership activities representing their schools.",
@@ -102,9 +102,9 @@ export const EVENTS: Event[] = [
   {
     id: "slc",
     title: "State Leadership Conference",
-    date: "March 1–3, 2026",
-    dateShort: "Mar 1–3",
-    location: "Austin, Texas",
+    date: "TBD",
+    dateShort: "TBD",
+    location: "Fort Worth, TX",
     description:
       "The premier FBLA event in Texas. Top Area 7 competitors advance to represent us at the state level.",
     learnMoreUrl: "https://fblatx.org",
