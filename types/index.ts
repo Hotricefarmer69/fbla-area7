@@ -20,6 +20,7 @@ export interface Officer {
   name: string
   title: string
   photo: string | null
+  photoPosition?: string
 }
 
 export interface GalleryPhoto {

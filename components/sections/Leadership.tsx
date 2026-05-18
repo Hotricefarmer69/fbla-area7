@@ -57,6 +57,7 @@ export function Leadership() {
                     src={officer.photo}
                     alt={officer.name}
                     className="w-full h-full rounded-full object-cover"
+                    style={officer.photoPosition ? { objectPosition: officer.photoPosition } : undefined}
                   />
                 ) : (
                   <span className="text-gold font-bold text-lg">

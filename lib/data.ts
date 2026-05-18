@@ -115,27 +115,38 @@ export const OFFICERS: Officer[] = [
   {
     name: "Subha Karki",
     title: "President",
-    photo: null,
+    photo: "/images/subha-karki.jpg",
+    photoPosition: "center 40%",
   },
   {
     name: "Aashika Jupudi",
     title: "Vice President",
-    photo: null,
+    photo: "/images/aashika-jupudi.jpg",
+    photoPosition: "center 40%",
   },
   {
     name: "Leela Boutchantharaj",
     title: "Secretary",
-    photo: null,
+    photo: "/images/leela-boutchantharaj.jpg",
+    photoPosition: "center 40%",
   },
   {
     name: "Samarth Jain",
     title: "Treasurer",
-    photo: null,
+    photo: "/images/samarth-jain.jpg",
+    photoPosition: "center 35%",
   },
   {
     name: "Anna Pickett",
     title: "Historian",
-    photo: null,
+    photo: "/images/anna-pickett.jpg",
+    photoPosition: "center 40%",
+  },
+  {
+    name: "Tarun Gajula",
+    title: "Parliamentarian",
+    photo: "/images/tarun-gajula.jpg",
+    photoPosition: "center 35%",
   },
 ]
 
@@ -151,8 +162,8 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     caption: "Area 7 Conference 2025 — Celebrating our outstanding student leaders",
   },
   {
-    src: "/images/3-g26ud018svc1s4lq66vlhb33-gz551w.jpeg",
-    alt: "FBLA students at conference",
+    src: "/images/img-2773.jpg",
+    alt: "FBLA students at Area 7 Conference",
     caption: "Students representing Area 7 with excellence",
   },
   {
